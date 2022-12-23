@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "436006171564",
+    "firebase_url": "https://mariorui-bc1e2-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "mariorui-bc1e2",
+    "storage_bucket": "mariorui-bc1e2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:436006171564:android:06ae5100b83cae1c780009",
+        "android_client_info": {
+          "package_name": "com.mario.rui"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "436006171564-8m0t7f7iqo1kp4t2a8de92usc52quc53.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDO5QIa5zmkb_2SnlWXoUlw-YAZQ-h4XMI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "436006171564-8m0t7f7iqo1kp4t2a8de92usc52quc53.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
