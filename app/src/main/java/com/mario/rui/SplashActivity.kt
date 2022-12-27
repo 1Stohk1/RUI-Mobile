@@ -13,15 +13,18 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
-        window.addFlags(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
-        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+        //Set the fragment fullscreen
+        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
 
-        //Glide.with(this)
-            //.load(R.drawable.splash)
-            //.fitCenter()
-            //.into(splash)
+        // window.addFlags(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
+        // window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
 
-        Timer().schedule(2000){
+        Glide.with(this)
+            .load(R.mipmap.ic_launcher)
+            .fitCenter()
+            .into(findViewById(R.id.splash))
+
+        Timer().schedule(5000){
             val i = Intent(this@SplashActivity, MainActivity::class.java)
             startActivity(i)
             finish()

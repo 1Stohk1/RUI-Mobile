@@ -15,6 +15,7 @@ import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.database.ktx.getValue
 import com.google.firebase.ktx.Firebase
+
 import com.mario.rui.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {

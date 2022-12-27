@@ -16,6 +16,7 @@ import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.mario.rui.databinding.FragmentHomeBinding
 import com.mario.rui.model.Task
+import com.mario.rui.network.extractTaskList
 import com.mario.rui.ui.home.rec_view.TaskRVAdapter
 import java.util.*
 import kotlin.collections.HashMap
@@ -34,27 +35,17 @@ class HomeFragment : Fragment(),TaskRVAdapter.Callback {
         val myRef = database.getReference("tasks")
         myRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
-                val taskList : MutableList<Task> = mutableListOf()
-
-                val theMap = dataSnapshot.value as HashMap<String, String> // Obtained from Firebase
-                for (key in theMap.keys) {
-                    val value = theMap[key] as HashMap<String, String>
-                    val owner = value["owner"]
-                    val text = value["text"]
-                    val task = Task(owner, text)
-                    taskList.add(task)
-                }
+                val taskList : MutableList<Task> = dataSnapshot.extractTaskList()
                 rv = binding.rv
                 val linearVertical = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
                 rv.layoutManager   = linearVertical
                 rv.isNestedScrollingEnabled = false
                 Objects.requireNonNull(rv.layoutManager!!).isAutoMeasureEnabled = true
                 rv.adapter = TaskRVAdapter(taskList, this@HomeFragment)
-
             }
 
             override fun onCancelled(error: DatabaseError) {
-                //TODO mostrare errore
+                Toast.makeText(context, "Error: $error", Toast.LENGTH_SHORT).show()
             }
         })
     }
