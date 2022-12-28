@@ -14,7 +14,8 @@ fun DataSnapshot.extractTaskList() : MutableList<Task>{
         val value = theMap[key] as HashMap<String, String>
         val owner = value["owner"]
         val text = value["text"]
-        val task = Task(owner, text)
+        val status = value["status"] as Int?
+        val task = Task(owner, text, status)
         taskList.add(task)
     }
     return taskList
