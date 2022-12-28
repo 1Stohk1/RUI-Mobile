@@ -44,6 +44,7 @@ class NotificationsFragment : Fragment(),NotificationAdapter.Callback {
             }
         })
     }
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentNotificationsBinding.inflate(inflater, container, false)
         val root: View = binding.root
@@ -56,8 +57,8 @@ class NotificationsFragment : Fragment(),NotificationAdapter.Callback {
         _binding = null
     }
 
-    override fun onClickListener(task: String) {
-        Toast.makeText(context, "Clicked: $task", Toast.LENGTH_SHORT).show()
+    override fun onClickListener(notifica: String) {
+        Toast.makeText(context, "Clicked: $notifica", Toast.LENGTH_SHORT).show()
     }
 
 

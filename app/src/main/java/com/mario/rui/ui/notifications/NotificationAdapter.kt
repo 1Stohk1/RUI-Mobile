@@ -9,7 +9,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.mario.rui.R
 
 
-class NotificationAdapter(private var rowList: MutableList<String>, private val call: NotificationsFragment) : RecyclerView.Adapter<NotificationAdapter.MyViewHolder>() {
+class NotificationAdapter(private var rowList: MutableList<String>, private val call: NotificationsFragment)
+    : RecyclerView.Adapter<NotificationAdapter.MyViewHolder>() {
 
     class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val name: TextView = view.findViewById(R.id.name)
